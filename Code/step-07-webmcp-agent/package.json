@@ -1,0 +1,25 @@
+{
+  "name": "step-07-webmcp-agent",
+  "version": "1.0.0",
+  "description": "Notes app as a WebMCP page with its own agent for LM Studio, Ollama and OpenAI-compatible endpoints",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test:agent": "node scripts/test-agent.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  },
+  "allowScripts": {
+    "esbuild": false,
+    "fsevents": false
+  }
+}

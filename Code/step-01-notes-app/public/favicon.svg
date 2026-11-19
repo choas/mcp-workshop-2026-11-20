@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Note with a folded corner, in the app's blue -->
+  <path d="M10 6h32l12 12v38a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#ffffff" stroke="#3498db" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M42 6v12h12" fill="#e8f4fd" stroke="#3498db" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M17 30h30M17 39h30M17 48h20" stroke="#2c3e50" stroke-width="4" stroke-linecap="round"/>
+</svg>

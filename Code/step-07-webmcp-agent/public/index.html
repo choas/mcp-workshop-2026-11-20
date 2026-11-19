@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App - WebMCP + Agent</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Personal Notes</h1>
+      <p class="subtitle">Step 07 - WebMCP tools + your own agent (LM Studio, Ollama, OpenAI)</p>
+    </header>
+
+    <section class="card">
+      <h2>Tools on this page</h2>
+      <p id="webmcp-status" class="hint">Checking for document.modelContext ...</p>
+      <ul id="tools" class="tool-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Agent</h2>
+      <div class="llm-bar">
+        <label>Provider <select id="provider"></select></label>
+        <label>Model <select id="model"></select></label>
+        <button id="reload-models" class="btn btn-secondary" type="button">Reload models</button>
+      </div>
+      <p id="llm-status" class="hint"></p>
+      <div id="chat" class="chat" aria-live="polite"></div>
+      <form id="chat-form" class="search-bar">
+        <input type="text" id="chat-input" placeholder="e.g. What did I note about MCP?" autocomplete="off" required>
+        <button type="submit" id="send" class="btn btn-primary">Send</button>
+        <button type="button" id="reset" class="btn btn-secondary">New chat</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Notes <span id="notes-count"></span></h2>
+      <div id="notes"></div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
