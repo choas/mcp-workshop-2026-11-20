@@ -11,6 +11,7 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
+  ListResourcesRequestSchema,
   ListResourceTemplatesRequestSchema,
   ReadResourceRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
@@ -186,6 +187,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     content: [{ type: 'text', text: `Unknown tool: ${name}` }],
     isError: true,
   };
+});
+
+// Handle resources/list: no static resources, only the template below.
+// Without this handler, clients that list resources (e.g. the Inspector) get "Method not found".
+server.setRequestHandler(ListResourcesRequestSchema, async () => {
+  return { resources: [] };
 });
 
 // Handle resources/templates/list

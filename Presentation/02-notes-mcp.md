@@ -20,7 +20,7 @@ An MCP server that wraps our Notes API:
 Test MCP servers without needing an LLM!
 
 ```bash
-npx @modelcontextprotocol/inspector
+npx @modelcontextprotocol/inspector@latest
 ```
 
 In the Inspector: Transport **STDIO**, Command `npx`, Arguments `tsx src/index.ts`.
