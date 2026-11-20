@@ -365,6 +365,12 @@ CREATE TABLE notes (
 );
 ```
 
+Look into the database from the CLI (in `Code/step-01-notes-app`):
+
+```bash
+sqlite3 -header -box data/notes.db "SELECT * FROM notes LIMIT 10;"
+```
+
 ---
 
 ## Step 01: Code Walkthrough
