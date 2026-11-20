@@ -11,6 +11,7 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
+  ListResourcesRequestSchema,
   ListResourceTemplatesRequestSchema,
   ReadResourceRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
@@ -186,6 +187,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     content: [{ type: 'text', text: `Unknown tool: ${name}` }],
     isError: true,
   };
+});
+
+// Handle resources/list (no static resources, only templates)
+server.setRequestHandler(ListResourcesRequestSchema, async () => {
+  return { resources: [] };
 });
 
 // Handle resources/templates/list
